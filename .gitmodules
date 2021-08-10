@@ -1,0 +1,3 @@
+[submodule "powerstation-mysql-database"]
+	path = powerstation-mysql-database
+	url = https://github.com/kuangyu0801/powerstation-mysql-database.git
