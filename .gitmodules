@@ -1,3 +1,6 @@
 [submodule "powerstation-mysql-database"]
 	path = powerstation-mysql-database
 	url = https://github.com/kuangyu0801/powerstation-mysql-database.git
+[submodule "powerstation-spring-backend"]
+	path = powerstation-spring-backend
+	url = https://github.com/kuangyu0801/powerstation-spring-backend.git
