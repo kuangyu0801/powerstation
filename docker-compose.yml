@@ -1,0 +1,22 @@
+version: "3"
+services:
+  database:
+    image: kuangyu0801/powerstation-mysql-database
+    networks:
+      powernet:
+        aliases:
+          - mysql 
+  backend:
+    image: kuangyu0801/powerstation-spring-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - powernet
+    depends_on:
+      - database
+  frontend:
+    image: kuangyu0801/powerstation-angular-frontend
+    ports:
+      - "4200:80" 
+networks:
+  powernet: {}

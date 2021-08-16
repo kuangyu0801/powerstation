@@ -1,4 +1,7 @@
 
+# Start
+docker-compose up
+access frontend http://localhost:4200
 # Step 1: Requirements clarifications
 - User can CRUD power station
 - User can query with position
