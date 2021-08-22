@@ -7,15 +7,21 @@ services:
         aliases:
           - mysql 
   backend:
-    image: kuangyu0801/powerstation-spring-backend
+    image: kuangyu0801/powerstation-spring-backend:v1.1
     ports:
       - "8080:8080"
     networks:
-      - powernet
+      powernet:
+        aliases:
+          - backend
     depends_on:
       - database
   frontend:
-    image: kuangyu0801/powerstation-angular-frontend
+    image: kuangyu0801/powerstation-angular-frontend:v1
+    networks:
+      powernet:
+        aliases:
+          - frontend
     ports:
       - "4200:80" 
 networks:
