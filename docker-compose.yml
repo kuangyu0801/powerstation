@@ -1,28 +1,22 @@
 version: "3"
 services:
-  database:
+  mysql:
     image: kuangyu0801/powerstation-mysql-database
-    networks:
-      powernet:
-        aliases:
-          - mysql 
-  backend:
-    image: kuangyu0801/powerstation-spring-backend:v1.1
+  api:
+    image: kuangyu0801/api
     ports:
       - "8080:8080"
-    networks:
-      powernet:
-        aliases:
-          - backend
     depends_on:
-      - database
-  frontend:
-    image: kuangyu0801/powerstation-angular-frontend:v1
-    networks:
-      powernet:
-        aliases:
-          - frontend
+      - mysql
+  client:
+    image: kuangyu0801/client
+  nginx:
+    image: kuangyu0801/nginx
+    # nginx is lightweight and critial, always restart
+    restart: always
     ports:
-      - "4200:80" 
-networks:
-  powernet: {}
+        # mapping localhost 4200 to default nginx port 80
+        - '4200:80'
+    depends_on: 
+        - api
+        - client
