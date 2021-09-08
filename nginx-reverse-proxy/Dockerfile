@@ -1,4 +1,4 @@
 FROM nginx
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 
-# docker build -t kuangyu0801/nginx .
+# docker build -t kuangyu0801/powerstation-nginx:v2 .

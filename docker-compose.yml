@@ -3,15 +3,13 @@ services:
   mysql:
     image: kuangyu0801/powerstation-mysql-database
   api:
-    image: kuangyu0801/api
-    ports:
-      - "8080:8080"
+    image: kuangyu0801/powerstation-spring-backend:v2
     depends_on:
       - mysql
   client:
-    image: kuangyu0801/client
+    image: kuangyu0801/powerstation-angular-frontend:v2
   nginx:
-    image: kuangyu0801/nginx
+    image: kuangyu0801/powerstation-nginx:v2
     # nginx is lightweight and critial, always restart
     restart: always
     ports:
