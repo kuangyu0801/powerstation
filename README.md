@@ -38,7 +38,7 @@ docker-compose up
 access frontend in browser via http://localhost:4200
 
 # Architecture
-![](powerstation.png)
+![](powerstation.jpg)
 # System Design
 
 ### Step 1: Requirements clarifications
